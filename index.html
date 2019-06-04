@@ -6,39 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        .screen {
+            width: 1366px;
+            height: 768px;
+        }
         #project_process,
         #project_payback,
         #person_project,
         #three_years,
         #project_quality {
-            width: 500px;
+            display: inline-block;
+            width: 30rem;
             height: 400px;
             margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <div id="project_process"></div>
-    <div id="project_payback"></div>
-    <div id="project_quality"></div>
 
-
+    <div class="screen">
+        <div id="project_process"></div>
+        <div id="project_payback"></div>
+        <div id="project_quality"></div>
+    </div>
+    
     <script src="lib/jquery.min.js"></script>
     <!-- <script src="lib/echarts.js"></script> -->
     <script src="lib/echarts.min.js"></script>
     <script src="lib/shine.js"></script>
     <script src="js/functions.js"></script>
     <script>
-
     var theme = 'shine'; //图标主题，可选：shine,light,dark
     var project_quality = echarts.init(document.getElementById('project_quality'), "light");
     var project_process = echarts.init(document.getElementById('project_process'), theme);
     var project_payback = echarts.init(document.getElementById('project_payback'),theme);
 
     //新建图标
-    newChart(project_quality,'项目质量统计','元', 'project_quality.json',3);
-    newChart(project_process,'项目进展情况总览','个','process.json',2);
-    newChart(project_payback,'项目付款回款统计图','元','payback.json',2);
+    newChart(project_quality,'项目质量统计',10,'元',0,10,'project_quality.json',3);
+    newChart(project_process,'项目进展情况总览',15,'个',50,10,'process.json',2);
+    newChart(project_payback,'项目付款回款统计图',20,'元',50,15,'payback.json',2);
     </script>
 </body>
 </html>
